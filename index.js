@@ -58,12 +58,8 @@ class MaxBinaryHeap {
     const getTopChild = (i) => (right(i) < this.size
       && this.comparator(left(i), right(i)) > 0 ? right(i) : left(i));
 
-  
-     console.log(left(curr),this.size,getTopChild(curr))
     while (left(curr) < this.size && this.comparator(getTopChild(curr),curr ) > 0) {
-      console.log('in while')
       const next = getTopChild(curr);
-      console.log('next',next)
       this.swap(curr, next);
       curr = next;
     }
