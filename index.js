@@ -9,9 +9,9 @@ class MaxBinaryHeap {
    this.values = [55,39, 33, 18, 27,12];  // [12,39, 33, 18, 27]  // [39,12,33,18,27]  // [39,27.33.18.12] 
   }
 
-  //                41
+  //                55
   //        39                33
-  //    18      27      12          55
+  //    18      27      12          
   //
   swap(a, b) {
     [this.values[a], this.values[b]] = [this.values[b], this.values[a]];
