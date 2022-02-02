@@ -55,13 +55,13 @@ class MaxBinaryHeap {
     let curr = index; 
     const left = (i) => 2 * i + 1; 
     const right = (i) => 2 * i + 2; 
-    const getTopChild = (i) => (right(i) < this.size
-      && this.comparator(left(i), right(i)) > 0 ? right(i) : left(i));
+    const getMax = (i) => (right(i) < this.size
+      && this.comparator(right(i), left(i)) > 0 ? right(i) : left(i));
 
-    while (left(curr) < this.size && this.comparator(getTopChild(curr),curr ) > 0) {
-      const next = getTopChild(curr);
-      this.swap(curr, next);
-      curr = next;
+    while (left(curr) < this.size && this.comparator(getMax(curr),curr ) > 0) {
+      const max = getMax(curr);
+      this.swap(curr, max);
+      curr = max;
     }
   }
 
@@ -69,10 +69,10 @@ class MaxBinaryHeap {
 
 
 const maxBheap = new MaxBinaryHeap();
-console.log(maxBheap.insert(55));
-console.log(maxBheap.insert(1));
-console.log(maxBheap.insert(100));
-console.log(maxBheap.insert(29));
+// console.log(maxBheap.insert(55));
+// console.log(maxBheap.insert(1));
+// console.log(maxBheap.insert(100));
+// console.log(maxBheap.insert(29));
 console.log(maxBheap.extractMax())
 
 
