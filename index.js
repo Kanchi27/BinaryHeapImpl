@@ -43,10 +43,8 @@ class MaxBinaryHeap {
   
   extractMax(index=0){
    if (!this.size) return null;
-   console.log(this.values)
     this.swap(index, this.size - 1); // swap with last
     const value = this.values.pop(); // remove element
-    console.log(this.values)
     this.bubbleDown(index);
     return this;
   }
